@@ -1,4 +1,4 @@
-﻿# SSSHW
+﻿# SSSSW
 
 This is a wrapper for Linux's `ssss` utility, automatically spliting an
 combining files with Shamir's Secret Sharing Scheme shares in a safe and easy to
