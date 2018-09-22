@@ -1,0 +1,5 @@
+﻿*.tmp
+*.swp
+*.bkp
+~*
+tstdata
