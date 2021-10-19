@@ -8,15 +8,15 @@ share way.
 
 Do `ssssw help` for getting help.
 
-`ssssw split 7 5 somefile` will generate 7 files. Each contain the input file
+`ssssw split 7 5 somefile` will generate 7 files. Each contains the input file
 base-64 encrypted and a Shamir's Secret Sharing Scheme share. Each file can
 safely be shared/stored anywhere without risk for the encrypted data to be
-compromised (it's AES-256-CBC encrypted). 5 such files are needed to recover
+compromised (it's PBKDF2 encrypted). 5 such files are needed to recover
 the initial data.
 
 `ssssw combine somefile.share01 somefile.share02 ...` will recombine 5 files into
 the initial data, automatically extracting Shamir's Secret Sharing Scheme share,
-recombining the AES key used for encrypting the intial data and decrypting that
+recombining the AES key used for encrypting the intial data and decrypting 
 that data back.
 
 All data is base64 encoding; i.e. both binary data and email sharing are safe.
