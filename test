@@ -1,10 +1,13 @@
 #!/bin/bash
 
-rm -rf tstdata
-mkdir -p tstdata
-cd tstdata
-head -30000 /dev/urandom > data.bin
-../ssssw split 7 5 data.bin
-../ssssw combine data.bin.share*
-diff data.bin data-*.bin || exit 1
+die() { echo "$*" 1>&2 ; exit 1; }
 
+rm -rf tstdata || die
+mkdir -p tstdata || die
+cd tstdata || die
+head -30000 /dev/urandom > data.bin || die
+../ssssw split 7 5 data.bin || die
+../ssssw combine data.bin.share* || die
+diff data.bin data-*.bin || die
+echo
+echo "test passed"
